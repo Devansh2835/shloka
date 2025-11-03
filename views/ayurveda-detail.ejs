@@ -1,0 +1,71 @@
+<%- include('partials/header') %>
+
+<div class="container page-transition">
+  <div class="text-center mb-4">
+    <h1><%= remedy.name %></h1>
+    <p class="lead text-ancient-brown">Traditional Ayurvedic wisdom</p>
+  </div>
+
+  <div class="wisdom-detail-card">
+    <div class="card-body">
+      <div class="category-info mb-4">
+        <h3>Category</h3>
+        <p><%= remedy.category %></p>
+      </div>
+
+      <div class="description mb-4">
+        <h3>Description</h3>
+        <p><%= remedy.description %></p>
+      </div>
+
+      <% if (remedy.ingredients) { %>
+      <div class="ingredients mb-4">
+        <h3>Ingredients</h3>
+        <ul>
+          <% remedy.ingredients.forEach(ingredient => { %>
+            <li><%= ingredient %></li>
+          <% }); %>
+        </ul>
+      </div>
+      <% } %>
+
+      <% if (remedy.preparation) { %>
+      <div class="preparation mb-4">
+        <h3>Preparation Method</h3>
+        <p><%= remedy.preparation %></p>
+      </div>
+      <% } %>
+
+      <% if (remedy.usage) { %>
+      <div class="usage mb-4">
+        <h3>How to Use</h3>
+        <p><%= remedy.usage %></p>
+      </div>
+      <% } %>
+
+      <% if (remedy.benefits) { %>
+      <div class="benefits mb-4">
+        <h3>Benefits</h3>
+        <ul>
+          <% remedy.benefits.forEach(benefit => { %>
+            <li><%= benefit %></li>
+          <% }); %>
+        </ul>
+      </div>
+      <% } %>
+
+      <% if (remedy.precautions) { %>
+      <div class="precautions">
+        <h3>Precautions</h3>
+        <p class="text-warning"><%= remedy.precautions %></p>
+      </div>
+      <% } %>
+    </div>
+  </div>
+
+  <div class="text-center mt-4">
+    <a href="/ancient/ayurveda" class="btn btn-ancient"><i class="fas fa-arrow-left me-2"></i>Back to Ayurveda</a>
+  </div>
+</div>
+
+<%- include('partials/footer') %>

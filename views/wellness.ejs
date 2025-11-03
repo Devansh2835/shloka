@@ -1,0 +1,132 @@
+<%- layout('layout') -%>
+
+<div class="card">
+    <div class="card-body">
+        <div class="text-center mb-4">
+            <h3>Wellness Tracker</h3>
+            <div class="shloka-block">
+                <p class="sanskrit-text"><%= shloka.sanskrit %></p>
+                <p class="transliteration"><%= shloka.transliteration %></p>
+                <p class="meaning text-muted"><%= shloka.meaning %></p>
+            </div>
+        </div>
+
+        <div class="tracker-grid">
+            <!-- Meditation -->
+            <div class="tracker-card" data-activity="meditation">
+                <span class="streak-badge">🔥 5 day streak!</span>
+                <h5>ध्यान - Meditation</h5>
+                <div class="progress-circle" style="--progress: 180deg">
+                    <span class="progress-text">50%</span>
+                </div>
+                <div class="activity-stats">
+                    <p>Daily Goal: 30 minutes</p>
+                    <p>Today: 15 minutes</p>
+                    <p>This Week: 90 minutes</p>
+                </div>
+                <button class="btn btn-ancient w-100 mt-3" onclick="trackActivity('meditation')">
+                    <i class="fas fa-plus-circle me-2"></i>Track Session
+                </button>
+                <div class="calendar-grid mt-3">
+                    <!-- Auto-populated by JS -->
+                </div>
+            </div>
+
+            <!-- Yoga -->
+            <div class="tracker-card" data-activity="yoga">
+                <span class="streak-badge">🌟 3 day streak!</span>
+                <h5>योग - Yoga</h5>
+                <div class="progress-circle" style="--progress: 120deg">
+                    <span class="progress-text">33%</span>
+                </div>
+                <div class="activity-stats">
+                    <p>Daily Goal: 45 minutes</p>
+                    <p>Today: 15 minutes</p>
+                    <p>This Week: 120 minutes</p>
+                </div>
+                <button class="btn btn-ancient w-100 mt-3" onclick="trackActivity('yoga')">
+                    <i class="fas fa-plus-circle me-2"></i>Track Session
+                </button>
+                <div class="calendar-grid mt-3">
+                    <!-- Auto-populated by JS -->
+                </div>
+            </div>
+
+            <!-- Exercise -->
+            <div class="tracker-card" data-activity="exercise">
+                <span class="streak-badge">💪 7 day streak!</span>
+                <h5>व्यायाम - Exercise</h5>
+                <div class="progress-circle" style="--progress: 240deg">
+                    <span class="progress-text">66%</span>
+                </div>
+                <div class="activity-stats">
+                    <p>Daily Goal: 60 minutes</p>
+                    <p>Today: 40 minutes</p>
+                    <p>This Week: 240 minutes</p>
+                </div>
+                <button class="btn btn-ancient w-100 mt-3" onclick="trackActivity('exercise')">
+                    <i class="fas fa-plus-circle me-2"></i>Track Session
+                </button>
+                <div class="calendar-grid mt-3">
+                    <!-- Auto-populated by JS -->
+                </div>
+            </div>
+
+            <!-- Achievements Section -->
+            <div class="card mt-4">
+                <div class="card-body">
+                    <h5 class="text-center mb-4">Achievements</h5>
+                    <div class="achievement-grid">
+                        <div class="achievement-badge">
+                            <i class="fas fa-medal"></i>
+                            <p>7 Day Streak</p>
+                        </div>
+                        <div class="achievement-badge">
+                            <i class="fas fa-star"></i>
+                            <p>Early Bird</p>
+                        </div>
+                        <div class="achievement-badge locked">
+                            <i class="fas fa-trophy"></i>
+                            <p>30 Days</p>
+                        </div>
+                        <div class="achievement-badge locked">
+                            <i class="fas fa-crown"></i>
+                            <p>Master</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+<!-- Track Activity Modal -->
+<div class="modal fade" id="trackModal" tabindex="-1">
+    <div class="modal-dialog">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h5 class="modal-title">Track Activity</h5>
+                <button type="button" class="btn-close" data-bs-dismiss="modal"></button>
+            </div>
+            <div class="modal-body">
+                <form id="trackForm">
+                    <input type="hidden" id="activityType">
+                    <div class="mb-3">
+                        <label class="form-label">Duration (minutes)</label>
+                        <input type="number" class="form-control" id="duration" required>
+                    </div>
+                    <div class="mb-3">
+                        <label class="form-label">Notes (optional)</label>
+                        <textarea class="form-control" id="notes"></textarea>
+                    </div>
+                </form>
+            </div>
+            <div class="modal-footer">
+                <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+                <button type="button" class="btn btn-ancient" onclick="saveActivity()">Save</button>
+            </div>
+        </div>
+    </div>
+</div>
+
+<script src="/js/wellness.js"></script>

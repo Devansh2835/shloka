@@ -1,0 +1,264 @@
+{
+  "Ayurveda": [
+    {
+      "name": "Chyawanprash",
+      "sanskrit_name": "च्यवनप्राश",
+      "overview": "Chyawanprash is an Ayurvedic Rasayana (rejuvenator and longevity-promoting formulation) whose Sanskrit meaning is 'The rejuvenating elixir created for Sage Chyavana.' It contains 40-50 herbs with key ingredients like Amla, Ghee, Honey, Pippali, Ashwagandha, Shatavari, and Guduchi.",
+      "preparation": [
+        "Amla Decoction: Boil and mash fresh Amla to extract pulp.",
+        "Herbal Decoction: Boil 40 herbs to form a concentrated extract.",
+        "Mixing with Sugar & Ghee: Cook Amla pulp with sugar syrup, add ghee, sesame oil, and honey.",
+        "Adding Spices: Incorporate cardamom, cinnamon, cloves, and other herbs.",
+        "Store in airtight jars for up to 3 years."
+      ],
+      "uses": [
+        "Boosts immunity and prevents common illnesses.",
+        "Enhances memory, concentration, and brain health.",
+        "Supports respiratory system and relieves cough or asthma.",
+        "Improves digestion and metabolism.",
+        "Promotes vitality, stamina, and glowing skin.",
+        "Aids sleep quality and reduces stress."
+      ],
+      "how_to_take": {
+        "adults": "1–2 teaspoons with warm milk or water, morning & night.",
+        "children": "½–1 teaspoon with milk, morning.",
+        "timing": "Best taken on an empty stomach or before sleep."
+      },
+      "ayurvedic_insight": "Represents balance between Rasa (taste), Ojas (vitality), and Medha (intellect). Nourishes every tissue and promotes inner vitality."
+    },
+    {
+      "name": "Giloy",
+      "overview": "Giloy (Tinospora cordifolia), known as 'nectar of immortality,' balances all three doshas and enhances immunity.",
+      "properties": "Bitter and astringent taste, light and unctuous qualities, warm potency, sweet post-digestive effect.",
+      "uses": [
+        "Boosts immunity and fights infections.",
+        "Controls blood sugar and reduces stress.",
+        "Detoxifies body and supports digestion."
+      ],
+      "forms": [
+        "Juice",
+        "Decoction",
+        "Powder",
+        "Tablets/Capsules"
+      ],
+      "how_to_take": {
+        "Juice": "Take 15–30 ml Giloy juice with water daily.",
+        "Powder": "½ teaspoon powder with warm water twice a day.",
+        "Capsules": "Take 1 capsule twice daily after meals."
+      },
+      "ayurvedic_insight": "Symbolizes 'fire of transformation,' strengthening Prana (life energy) and resilience."
+    },
+    {
+      "name": "Amla",
+      "overview": "Amla (Indian Gooseberry) is the 'Divine Fruit of Immortality,' rich in Vitamin C and rejuvenating for all doshas.",
+      "properties": "Sour, sweet, bitter, pungent, and astringent taste; light, dry qualities; cooling potency; sweet post-digestive effect.",
+      "uses": [
+        "Boosts immunity and slows aging.",
+        "Improves digestion, hair, and eye health.",
+        "Supports liver, heart, and respiratory system."
+      ],
+      "forms": [
+        "Juice",
+        "Powder",
+        "Pickle/Murabba",
+        "Oil"
+      ],
+      "how_to_take": {
+        "Juice": "Consume 10–20 ml Amla juice with water every morning.",
+        "Powder": "½ teaspoon Amla powder with honey after meals.",
+        "Murabba": "Eat 1 Amla murabba daily as a sweet tonic."
+      },
+      "ayurvedic_insight": "A cooling Rasayana symbolizing balance and rejuvenation — being 'beyond attachment and aversion.'"
+    },
+    {
+      "name": "Triphala",
+      "overview": "Triphala is a Tridoshic Rasayana composed of Amla, Haritaki, and Bibhitaki, promoting balance and detoxification.",
+      "preparation": [
+        "Dry and powder each fruit individually.",
+        "Mix equal proportions to form Triphala Churna."
+      ],
+      "uses": [
+        "Improves digestion and detoxification.",
+        "Strengthens immunity and vision.",
+        "Supports skin, metabolism, and anti-aging."
+      ],
+      "how_to_take": {
+        "Powder": "½–1 teaspoon with warm water at night.",
+        "Capsules": "1–2 tablets with warm water.",
+        "Tea": "Boil 1 teaspoon in water for 5 minutes."
+      },
+      "ayurvedic_insight": "Balances cleansing and nourishment; promotes Ojas (vital energy) and harmony."
+    },
+    {
+      "name": "Haldi",
+      "overview": "Haldi (Turmeric) means 'the one that enhances inner radiance.' Known for anti-inflammatory, antioxidant, and purifying effects.",
+      "properties": "Bitter and pungent taste; light, dry; hot potency; balances Kapha and Vata.",
+      "preparation": "Harvest, boil, dry, grind, and store rhizomes.",
+      "uses": [
+        "Improves digestion and liver health.",
+        "Boosts immunity and purifies blood.",
+        "Enhances skin glow and wound healing.",
+        "Used in spiritual rituals for purity."
+      ],
+      "how_to_take": "Mix in warm milk or use in cooking; apply as face pack."
+    },
+    {
+      "name": "Neem",
+      "overview": "Neem means 'the bestower of health and longevity.' It is a strong detoxifying and purifying herb.",
+      "properties": "Bitter, astringent taste; light, dry; cold potency; balances Pitta and Kapha.",
+      "preparation": "Collect leaves, bark, flowers; dry, crush, extract juice or oil.",
+      "uses": [
+        "Treats acne, eczema, and skin infections.",
+        "Boosts immunity and oral health.",
+        "Detoxifies blood and liver.",
+        "Acts as a natural insect repellent."
+      ],
+      "how_to_take": "Consume powder with honey or warm water; use leaf paste or diluted oil externally."
+    },
+    {
+      "name": "Brahmi",
+      "overview": "Brahmi (Bacopa monnieri) is known as 'that which gives knowledge' and is revered for enhancing intellect and memory.",
+      "forms": [
+        "Juice (Swarasa)",
+        "Powder (Churna)",
+        "Oil (Taila)",
+        "Ghee (Ghrita)"
+      ],
+      "properties": "Bitter taste; light, oily qualities; cooling potency; sweet post-digestive effect; balances Pitta and Kapha.",
+      "uses": [
+        "Improves concentration, memory, and learning.",
+        "Reduces anxiety, stress, and depression.",
+        "Promotes restful sleep and emotional stability.",
+        "Enhances hair growth and skin rejuvenation."
+      ],
+      "how_to_take": {
+        "Juice": "Take 1–2 teaspoons of Brahmi juice in the morning on an empty stomach.",
+        "Powder": "¼–½ teaspoon Brahmi powder with warm milk before sleep.",
+        "Oil": "Massage scalp with Brahmi oil twice a week for mental calmness."
+      },
+      "ayurvedic_insight": "Symbol of awareness and consciousness — nourishes both intellect and calmness."
+    },
+    {
+      "name": "Ashwagandha",
+      "overview": "Ashwagandha (Withania somnifera) means 'that which has the strength of a horse.' It promotes vitality and longevity.",
+      "forms": [
+        "Powder (Churna)",
+        "Extract",
+        "Ghrita",
+        "Milk Tonic"
+      ],
+      "properties": "Bitter, astringent, sweet taste; light, oily qualities; warm potency; balances Vata and Kapha.",
+      "uses": [
+        "Reduces stress, anxiety, and fatigue.",
+        "Enhances energy, muscle strength, and sleep.",
+        "Supports reproductive health and immunity."
+      ],
+      "how_to_take": {
+        "Powder": "½–1 teaspoon with warm milk or ghee before bedtime.",
+        "Capsules": "1–2 capsules twice daily after meals.",
+        "Tea": "Boil 1 teaspoon powder in water for 5 minutes; drink warm."
+      },
+      "ayurvedic_insight": "A rejuvenating Rasayana that restores strength and balances body-mind harmony."
+    },
+    {
+      "name": "Shankhpushpi",
+      "overview": "Shankhpushpi (Convolvulus pluricaulis) is a Medhya Rasayana promoting intellect, calmness, and memory.",
+      "forms": [
+        "Syrup",
+        "Powder",
+        "Ghrita",
+        "Capsules/Tablets"
+      ],
+      "properties": "Bitter and sweet taste; light, unctuous; cool potency; balances Vata and Pitta.",
+      "uses": [
+        "Improves focus, learning, and mental clarity.",
+        "Reduces anxiety and promotes natural sleep.",
+        "Supports heart and digestion."
+      ],
+      "how_to_take": {
+        "Syrup": "Take 1–2 teaspoons of Shankhpushpi syrup daily.",
+        "Powder": "½ teaspoon powder with warm milk before bed.",
+        "Ghrita": "1 teaspoon with warm water or milk for calmness."
+      },
+      "ayurvedic_insight": "Symbolizes mental peace and clarity, harmonizing mind and spirit."
+    },
+    {
+      "name": "Jatamansi",
+      "overview": "Jatamansi (Spikenard) is a Medhya Rasayana that supports mental peace, emotional balance, and nervous health.",
+      "properties": "Bitter, astringent, sweet taste; light, oily; cool potency; balances Pitta and Kapha.",
+      "preparation": "Dry roots in shade, grind into powder, and prepare oil or decoction.",
+      "uses": [
+        "Improves sleep, reduces anxiety, and enhances cognition.",
+        "Promotes hair and skin rejuvenation.",
+        "Supports heart and hormonal balance."
+      ],
+      "how_to_take": "Consume powder with warm milk or honey; use oil for massage.",
+      "ayurvedic_insight": "Symbol of Sattva — promoting emotional stability, deep rest, and spiritual clarity."
+    },
+    {
+      "name": "Tulsi",
+      "overview": "Tulsi (Holy Basil), the 'Queen of Herbs,' promotes purity, immunity, and spiritual balance.",
+      "properties": "Pungent and bitter taste; light, dry; hot potency; balances Kapha and Vata.",
+      "preparation": "Collect, shade-dry leaves; use as fresh juice, tea, powder, or oil.",
+      "uses": [
+        "Boosts respiratory health and immunity.",
+        "Reduces stress and purifies blood.",
+        "Enhances heart health and detoxification."
+      ],
+      "how_to_take": "Chew fresh leaves, drink as tea, or consume juice with honey.",
+      "ayurvedic_insight": "Represents purity and harmony, bringing emotional clarity and vitality."
+    },
+    {
+      "name": "Ghee",
+      "overview": "Ghee (Clarified Butter) is the purest form of Ayurvedic fat, symbolizing nourishment and clarity.",
+      "properties": "Sweet taste; heavy, unctuous, soft qualities; cooling potency; sweet post-digestive effect; balances Vata and Pitta.",
+      "preparation": "Boil milk, form curd, churn butter, clarify it by heating, then filter and store.",
+      "uses": [
+        "Enhances digestion and nourishes tissues.",
+        "Improves brain, skin, and hair health.",
+        "Aids detoxification and builds energy."
+      ],
+      "how_to_take": "Consume daily with warm milk or meals; use as a base for herbal formulations or external oil.",
+      "ayurvedic_insight": "Symbol of nourishment, love, and consciousness — feeds both body and soul."
+    },
+    {
+      "name": "Bel Patra",
+      "overview": "Bel Patra (Bael Leaf) is sacred to Lord Shiva and symbolizes purification and harmony.",
+      "properties": "Astringent, bitter, sweet taste; light, dry qualities; heating potency; balances Kapha and Vata.",
+      "preparation": "Collect, wash, and shade-dry leaves. Prepare as juice, powder, or decoction.",
+      "uses": [
+        "Improves digestion and relieves constipation.",
+        "Purifies blood and supports heart health.",
+        "Promotes calmness and meditation.",
+        "Boosts immunity and heals wounds."
+      ],
+      "how_to_take": {
+        "Juice": "10–15 ml with honey after meals.",
+        "Powder": "½ teaspoon after meals with water.",
+        "Decoction": "20 ml twice daily."
+      },
+      "ayurvedic_insight": "Balances Tridosha and embodies purity, enhancing clarity and spiritual harmony."
+    },
+    {
+      "name": "Herbal Teas",
+      "overview": "Herbal Tea (Kwath) is an Ayurvedic infusion of herbs, flowers, roots, and spices that balance body, mind, and spirit.",
+      "properties": "Light, aromatic, soothing; customizable for Vata, Pitta, and Kapha.",
+      "preparation": "Boil 1–2 cups water, add 1–2 tsp herbs, simmer 5–10 minutes, strain, and serve warm with honey or lemon.",
+      "common_varieties": {
+        "Tulsi Tea": "Boosts immunity and reduces stress.",
+        "Ginger Tea": "Improves digestion and warms the body.",
+        "Lemongrass Tea": "Detoxifies and refreshes senses.",
+        "Ashwagandha Tea": "Relieves fatigue and strengthens nerves.",
+        "Chamomile Tea": "Calms the mind and promotes sleep."
+      },
+      "benefits": [
+        "Boosts immunity and metabolism.",
+        "Improves digestion and reduces bloating.",
+        "Relieves stress and detoxifies the body.",
+        "Promotes mental clarity and sleep."
+      ],
+      "how_to_take": "Drink 1–2 cups daily, morning and evening; always warm, sweeten with honey or jaggery.",
+      "ayurvedic_insight": "Each cup awakens Prana — harmonizing inner rhythm with nature."
+    }
+  ]
+}

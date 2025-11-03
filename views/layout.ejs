@@ -1,0 +1,74 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Shloka - Health & Wellness</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Crimson+Text:ital,wght@0,400;0,600;1,400&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Rozha+One&display=swap" rel="stylesheet">
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="/style.css?v=2">
+    <!-- Prevent FOUC (Flash of Unstyled Content) -->
+    <style>
+      .loader-wrapper { opacity: 1; }
+      .page-transition { opacity: 0; }
+    </style>
+  </head>
+  <body>
+    <!-- Loader -->
+    <div class="loader-wrapper">
+      <div class="loader"></div>
+    </div>
+    
+    <!-- Background Audio -->
+    <audio id="bgMusic" loop>
+      <source src="/assets/audio/nirvana-shatakam.mp3" type="audio/mp3">
+    </audio>
+    <div id="audioControl" class="audio-control">
+      <button onclick="toggleMusic()" class="btn btn-link">
+        <i class="fas fa-volume-up"></i>
+      </button>
+    </div>
+
+    <!-- Background Layers -->
+    <div class="background-container">
+        <div class="parchment-texture"></div>
+        <div class="overlay-texture"></div>
+        <div class="six-enemies-bg"></div>
+        <div class="manuscript-decorations"></div>
+    </div>
+
+    <nav class="navbar navbar-expand-lg sticky-top">
+      <div class="container-fluid">
+        <div class="d-flex align-items-center">
+          <a class="navbar-brand sanskrit-title me-3" href="/">श्लोक</a>
+          <div class="d-flex align-items-center">
+            <a class="btn btn-ancient me-2" href="/chatbot">AI Guide</a>
+            <a class="btn btn-ancient me-2" href="/ancient">Ancient Wisdom</a>
+            <a class="btn btn-ancient" href="/wellness">Wellness Tracker</a>
+          </div>
+        </div>
+        <div class="d-flex ms-auto align-items-center">
+          <% if (currentUser) { %>
+            <span class="me-3 text-parchment">Welcome, <strong><%= currentUser.name %></strong></span>
+            <a class="btn btn-ancient me-2" href="/logout">Logout</a>
+          <% } else { %>
+            <a class="btn btn-outline-light me-2" href="/login">Login</a>
+            <a class="btn btn-ancient" href="/signup">Sign up</a>
+          <% } %>
+        </div>
+      </div>
+    </nav>
+
+    <div class="container my-4">
+      <%- body %>
+    </div>
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+    <!-- Removed FontAwesome kit code in favor of CDN -->
+    <script src="/js/main.js"></script>
+    <script src="/js/audio.js"></script>
+    <!-- Page-specific scripts are included in their respective views -->
+  </body>
+</html>

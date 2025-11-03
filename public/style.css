@@ -1,0 +1,1039 @@
+:root {
+  --ancient-gold: #C6A961;
+  --ancient-brown: #4A3C31;
+  --parchment: #F4E4BC;
+  --ink: #2C1810;
+  --accent-red: #8B3232;
+  --accent-green: #456345;
+  --shadow: rgba(0, 0, 0, 0.1);
+}
+
+body {
+  background-color: var(--parchment);
+  background-image: url('/assets/images/parchment-texture.jpg');
+  background-attachment: fixed;
+  background-size: cover;
+  font-family: 'Crimson Text', serif;
+  color: var(--ink);
+  position: relative;
+  min-height: 100vh;
+  padding-bottom: 60px;
+  line-height: 1.6;
+  overflow-y: scroll;
+}
+
+/* Typography Enhancements */
+h1, h2, h3, h4, h5, h6 {
+  font-family: 'Rozha One', 'Crimson Text', serif;
+  color: var(--ancient-brown);
+  margin-bottom: 1rem;
+  position: relative;
+}
+
+h1 {
+  font-size: 3.5rem;
+  text-align: center;
+  margin-bottom: 2rem;
+}
+
+h2 {
+  font-size: 2.5rem;
+  margin-bottom: 1.5rem;
+}
+
+h1::after, h2::after {
+  content: '';
+  display: block;
+  width: 150px;
+  height: 3px;
+  background: linear-gradient(90deg, var(--ancient-gold), transparent);
+  margin: 0.5rem auto 0;
+}
+
+.container {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 2rem 1rem;
+  position: relative;
+  z-index: 1;
+}
+
+/* Manuscript Background Layers */
+.manuscript-bg {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background-image: url('/assets/images/parchment-texture.jpg');
+  background-size: cover;
+  opacity: 0.15;
+  /* place the parchment at the very back */
+  z-index: -3;
+  pointer-events: none;
+}
+
+.decorative-overlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background-image: url('/assets/images/mandala-pattern.png');
+  background-size: 800px;
+  opacity: 0.03;
+  /* decorative layer above the parchment but below the diagram */
+  z-index: -2;
+  pointer-events: none;
+  animation: rotate 240s infinite linear;
+}
+
+/* Six Enemies (diagram) background - translucent, fixed and always visible */
+.six-enemies-bg {
+  position: fixed;
+  /* center the diagram in the viewport */
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  width: min(900px, 80vw);
+  height: min(900px, 80vw);
+  /* uses the six-enemies diagram placed in public/assets/images */
+  background-image: url('/assets/images/six-enemies.png');
+  background-repeat: no-repeat;
+  background-position: center center;
+  background-size: contain;
+  opacity: 0.25; /* reduced opacity for subtlety */
+  /* above mandala overlay but behind content */
+  z-index: -1;
+  pointer-events: none; /* non-interactive */
+  mix-blend-mode: multiply; /* blend subtly with parchment */
+}
+
+/* Hide the diagram on small screens to avoid overlap */
+@media (max-width: 768px) {
+  .six-enemies-bg { display: none; }
+}
+
+/* Feature Cards */
+.feature-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+  gap: 2rem;
+  margin: 3rem 0;
+}
+
+.feature-card {
+  background: rgba(255, 255, 255, 0.9);
+  border-radius: 15px;
+  padding: 2rem;
+  position: relative;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+  overflow: hidden;
+  border: 1px solid rgba(198, 169, 97, 0.3);
+}
+
+.feature-card::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  height: 4px;
+  background: linear-gradient(90deg, var(--ancient-gold), transparent);
+}
+
+/* Use scroll image as background for feature cards (subtle, low opacity overlay) */
+.feature-card {
+  background-image: url('/assets/images/scroll.jpg');
+  background-repeat: no-repeat;
+  background-position: center center;
+  background-size: cover;
+  background-blend-mode: soft-light;
+  /* keep overlay for readability */
+  background-color: rgba(255,255,255,0.85);
+}
+
+.feature-card:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 15px 30px var(--shadow);
+}
+
+.feature-icon {
+  font-size: 2.5rem;
+  color: var(--ancient-gold);
+  margin-bottom: 1rem;
+}
+
+.feature-title {
+  font-family: 'Rozha One', serif;
+  font-size: 1.5rem;
+  color: var(--ancient-brown);
+  margin-bottom: 1rem;
+}
+
+.feature-description {
+  color: var(--ink);
+  font-size: 1.1rem;
+  line-height: 1.6;
+}
+
+/* Hero Section */
+.hero-section {
+  text-align: center;
+  padding: 4rem 0;
+  position: relative;
+  overflow: hidden;
+}
+
+.hero-title {
+  font-size: 4rem;
+  color: var(--ancient-brown);
+  margin-bottom: 1.5rem;
+  position: relative;
+  z-index: 1;
+}
+
+.hero-subtitle {
+  font-size: 1.5rem;
+  color: var(--ink);
+  opacity: 0.9;
+  margin-bottom: 2rem;
+  max-width: 800px;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.hero-cta {
+  display: inline-block;
+  padding: 1rem 2rem;
+  background: var(--ancient-brown);
+  color: var(--ancient-gold);
+  text-decoration: none;
+  border-radius: 30px;
+  font-size: 1.2rem;
+  transition: all 0.3s ease;
+  border: 2px solid var(--ancient-gold);
+}
+
+.hero-cta:hover {
+  background: var(--ancient-gold);
+  color: var(--ancient-brown);
+  transform: translateY(-2px);
+}
+
+/* Audio Control */
+.audio-control {
+  position: fixed;
+  bottom: 20px;
+  right: 20px;
+  z-index: 1000;
+}
+
+.audio-control button {
+  background: var(--ancient-brown);
+  color: var(--ancient-gold);
+  border: none;
+  border-radius: 50%;
+  width: 40px;
+  height: 40px;
+  opacity: 0.7;
+  transition: opacity 0.3s;
+}
+
+.audio-control button:hover {
+  opacity: 1;
+}
+
+/* Quick Start Section */
+.quick-start {
+  background: rgba(255, 255, 255, 0.8);
+  border-radius: 15px;
+  padding: 3rem;
+  margin: 4rem 0;
+  position: relative;
+  border: 1px solid rgba(198, 169, 97, 0.3);
+}
+
+.quick-start::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background-image: url('/assets/images/subtle-pattern.png');
+  opacity: 0.05;
+  z-index: -1;
+}
+
+.step-list {
+  list-style: none;
+  padding: 0;
+  margin: 2rem 0;
+  counter-reset: step;
+}
+
+.step-list li {
+  position: relative;
+  padding-left: 3rem;
+  margin-bottom: 1.5rem;
+  counter-increment: step;
+}
+
+.step-list li::before {
+  content: counter(step);
+  position: absolute;
+  left: 0;
+  top: 0;
+  width: 2rem;
+  height: 2rem;
+  background: var(--ancient-gold);
+  color: var(--ancient-brown);
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-weight: bold;
+}
+
+/* Navigation */
+.navbar {
+  background: rgba(74, 60, 49, 0.95);
+  backdrop-filter: blur(10px);
+  border-bottom: 2px solid var(--ancient-gold);
+  padding: 1rem 0;
+}
+
+.navbar-brand {
+  font-family: 'Rozha One', serif;
+  color: var(--ancient-gold) !important;
+  font-size: 1.8rem;
+}
+
+.nav-link {
+  color: var(--parchment) !important;
+  font-size: 1.1rem;
+  padding: 0.5rem 1rem !important;
+  transition: color 0.3s ease;
+}
+
+.nav-link:hover {
+  color: var(--ancient-gold) !important;
+}
+
+.btn-ancient {
+  background: var(--ancient-brown);
+  border: 2px solid var(--ancient-gold);
+  color: var(--ancient-gold);
+  padding: 0.5rem 1.5rem;
+  border-radius: 25px;
+  transition: all 0.3s ease;
+  text-decoration: none;
+}
+
+.btn-ancient:hover {
+  background: var(--ancient-gold);
+  color: var(--ancient-brown);
+  transform: translateY(-2px);
+  border-color: var(--ancient-brown);
+}
+
+.btn-ancient.light {
+  background: transparent;
+  border-color: var(--ancient-gold);
+  color: var(--ancient-gold);
+}
+
+.btn-ancient.light:hover {
+  background: var(--ancient-gold);
+  color: var(--ancient-brown);
+}
+
+/* Cards and Content */
+.card {
+  background: rgba(244, 228, 188, 0.85);
+  backdrop-filter: blur(10px);
+  border: none;
+  box-shadow: 0 8px 25px var(--shadow);
+  transition: all 0.3s ease;
+  margin: 1.5rem 0;
+  border-radius: 12px;
+  overflow: hidden;
+  position: relative;
+  border: 1px solid rgba(198, 169, 97, 0.3);
+}
+
+.card:hover {
+  transform: translateY(-5px);
+}
+
+.card::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  height: 4px;
+  background: linear-gradient(90deg, var(--ancient-gold), var(--ancient-brown));
+}
+
+.card-body {
+  border: 1px solid var(--ancient-brown);
+  margin: 15px;
+  padding: 25px;
+  position: relative;
+}
+
+.card-body::after {
+  content: '॥';
+  position: absolute;
+  bottom: -10px;
+  right: 10px;
+  font-size: 24px;
+  color: var(--ancient-gold);
+  opacity: 0.5;
+}
+
+/* Chat Elements */
+#chatBox {
+  background: rgba(255, 255, 255, 0.7) !important;
+  border-radius: 8px;
+  border: 1px solid var(--ancient-brown) !important;
+}
+
+#chatBox .user { 
+  text-align: right;
+  margin: 10px 0;
+  padding: 10px 15px;
+  background: rgba(198, 169, 97, 0.1);
+  border-radius: 15px 15px 0 15px;
+}
+
+#chatBox .bot { 
+  text-align: left;
+  margin: 10px 0;
+  padding: 10px 15px;
+  background: rgba(74, 60, 49, 0.1);
+  border-radius: 15px 15px 15px 0;
+}
+
+/* Ancient Wisdom Entries */
+.wisdom-entry { 
+  border-bottom: 1px solid var(--ancient-brown);
+  padding: 20px 0;
+  margin: 10px 0;
+}
+
+.wisdom-entry h5 {
+  color: var(--ancient-brown);
+  font-weight: 600;
+}
+
+.wisdom-entry em {
+  color: var(--ancient-gold);
+  font-style: normal;
+}
+
+/* Loader */
+.loader-wrapper {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: rgba(244, 228, 188, 0.9);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  z-index: 9999;
+  transition: opacity 0.5s;
+}
+
+.loader {
+  width: 60px;
+  height: 60px;
+  border: 3px solid var(--ancient-brown);
+  border-top-color: var(--ancient-gold);
+  border-radius: 50%;
+  animation: spin 1s linear infinite;
+}
+
+@keyframes spin {
+  to { transform: rotate(360deg); }
+}
+
+/* Page Transitions */
+.page-transition {
+  opacity: 0;
+  transform: translateY(20px);
+  animation: fadeInUp 0.6s forwards;
+}
+
+/* Animations */
+@keyframes rotate {
+  from { transform: translate(-50%, -50%) rotate(0deg); }
+  to { transform: translate(-50%, -50%) rotate(360deg); }
+}
+
+@keyframes fadeInUp {
+  from {
+    opacity: 0;
+    transform: translateY(20px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+/* Animations */
+@keyframes rotate {
+  from { transform: rotate(0deg); }
+  to { transform: rotate(360deg); }
+}
+
+@keyframes fadeInUp {
+  from {
+    opacity: 0;
+    transform: translateY(20px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@keyframes unfoldScroll {
+  from {
+    transform: translateY(-20px) scale(0.98);
+    opacity: 0;
+  }
+  to {
+    transform: translateY(0) scale(1);
+    opacity: 1;
+  }
+}
+
+/* Apply animations */
+.feature-card {
+  animation: fadeInUp 0.6s ease-out;
+  animation-fill-mode: both;
+}
+
+.feature-card:nth-child(1) { animation-delay: 0.1s; }
+.feature-card:nth-child(2) { animation-delay: 0.2s; }
+.feature-card:nth-child(3) { animation-delay: 0.3s; }
+.feature-card:nth-child(4) { animation-delay: 0.4s; }
+
+.card {
+  animation: unfoldScroll 0.6s ease-out;
+}
+
+.tracker-card, .wisdom-entry {
+  animation: fadeInUp 0.5s ease-out;
+  animation-fill-mode: both;
+}
+
+/* Footer Styling */
+.site-footer {
+  background: rgba(74, 60, 49, 0.95);
+  backdrop-filter: blur(10px);
+  border-top: 2px solid var(--ancient-gold);
+  padding: 3rem 0 2rem;
+  margin-top: 4rem;
+  color: var(--parchment);
+  position: relative;
+}
+
+.site-footer::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  height: 1px;
+  background: linear-gradient(90deg, transparent, var(--ancient-gold), transparent);
+}
+
+.footer-section {
+  margin-bottom: 2rem;
+}
+
+.footer-heading {
+  color: var(--ancient-gold);
+  font-family: 'Rozha One', serif;
+  font-size: 1.5rem;
+  margin-bottom: 1.2rem;
+  position: relative;
+  padding-bottom: 0.5rem;
+}
+
+.footer-heading::after {
+  content: '';
+  position: absolute;
+  left: 0;
+  bottom: 0;
+  width: 50px;
+  height: 2px;
+  background: var(--ancient-gold);
+}
+
+.footer-contact-list {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+
+.footer-contact-list li {
+  margin-bottom: 1rem;
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+}
+
+.footer-contact-list i {
+  color: var(--ancient-gold);
+  font-size: 1.2rem;
+  width: 24px;
+  text-align: center;
+}
+
+.footer-contact-list a {
+  color: var(--parchment);
+  text-decoration: none;
+  transition: color 0.3s ease;
+}
+
+.footer-contact-list a:hover {
+  color: var(--ancient-gold);
+}
+
+.footer-bottom {
+  border-top: 1px solid rgba(198, 169, 97, 0.2);
+  padding-top: 1.5rem;
+  margin-top: 2rem;
+  text-align: center;
+  font-size: 0.9rem;
+  color: rgba(244, 228, 188, 0.7);
+}
+
+.footer-bottom p {
+  margin: 0;
+}
+
+/* Responsive Adjustments */
+@media (max-width: 768px) {
+  h1 { font-size: 2.5rem; }
+  .hero-title { font-size: 3rem; }
+  .hero-subtitle { font-size: 1.2rem; }
+  .feature-grid { grid-template-columns: 1fr; }
+  .quick-start { padding: 2rem; }
+  .site-footer { padding: 2rem 0 1rem; }
+  .footer-section { margin-bottom: 1.5rem; }
+}
+
+/* Decorative elements */
+.decorative-border {
+  position: relative;
+}
+
+.decorative-border::before,
+.decorative-border::after {
+  content: '☸';
+  position: absolute;
+  color: var(--ancient-gold);
+  font-size: 1.5rem;
+  opacity: 0.5;
+}
+
+.decorative-border::before { left: 10px; }
+.decorative-border::after { right: 10px; }
+
+/* Sanskrit text styling */
+.sanskrit-text {
+  font-size: 1.5rem;
+  line-height: 1.8;
+  color: var(--ancient-brown);
+}
+
+.transliteration {
+  font-style: italic;
+  color: var(--ancient-brown);
+  opacity: 0.8;
+}
+
+/* Scroll styling */
+.card::before {
+  background-image: url('/assets/images/scroll-border.png');
+  background-size: 100% auto;
+  background-repeat: repeat-y;
+  opacity: 0.1;
+}
+
+/* Wellness Tracker */
+.tracker-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+  gap: 30px;
+  margin-top: 30px;
+}
+
+.tracker-card {
+  background: rgba(255, 255, 255, 0.9);
+  border-radius: 12px;
+  padding: 25px;
+  border: 1px solid var(--ancient-brown);
+  text-align: center;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+  position: relative;
+  overflow: hidden;
+}
+
+.tracker-card:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 10px 20px var(--shadow);
+}
+
+.tracker-card::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  height: 3px;
+  background: linear-gradient(90deg, var(--accent-green), var(--ancient-gold));
+}
+
+.progress-circle {
+  width: 120px;
+  height: 120px;
+  border-radius: 50%;
+  margin: 20px auto;
+  position: relative;
+  background: conic-gradient(var(--ancient-gold) var(--progress), #eee 0deg);
+  box-shadow: inset 0 0 10px var(--shadow);
+}
+
+.progress-circle::before {
+  content: '';
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  width: 80%;
+  height: 80%;
+  background: white;
+  border-radius: 50%;
+  box-shadow: 0 0 10px var(--shadow);
+}
+
+.progress-text {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  font-size: 1.5rem;
+  color: var(--ancient-brown);
+  font-weight: bold;
+}
+
+.streak-badge {
+  position: absolute;
+  top: 15px;
+  right: 15px;
+  background: var(--accent-green);
+  color: white;
+  padding: 5px 10px;
+  border-radius: 15px;
+  font-size: 0.8rem;
+}
+
+.activity-stats {
+  margin-top: 15px;
+  padding-top: 15px;
+  border-top: 1px dashed var(--ancient-brown);
+}
+
+.activity-stats p {
+  margin: 5px 0;
+  color: var(--ink);
+}
+
+/* Wellness Calendar */
+.calendar-grid {
+  display: grid;
+  grid-template-columns: repeat(7, 1fr);
+  gap: 5px;
+  margin-top: 20px;
+}
+
+.calendar-day {
+  aspect-ratio: 1;
+  border: 1px solid var(--ancient-brown);
+  border-radius: 4px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 0.8rem;
+}
+
+.calendar-day.active {
+  background: var(--ancient-gold);
+  color: white;
+}
+
+/* Achievement Badges */
+.achievement-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(100px, 1fr));
+  gap: 15px;
+  margin-top: 20px;
+}
+
+.achievement-badge {
+  text-align: center;
+  padding: 10px;
+}
+
+.achievement-badge i {
+  font-size: 2rem;
+  color: var(--ancient-gold);
+  margin-bottom: 5px;
+}
+
+.achievement-badge.locked {
+  opacity: 0.5;
+}
+
+/* Ancient Wisdom Portal Styles */
+
+.wisdom-portal-card {
+  background-color: rgba(255, 255, 255, 0.9);
+  border-radius: 15px;
+  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+  margin-bottom: 2rem;
+  overflow: hidden;
+  border: 1px solid var(--ancient-gold);
+}
+
+.wisdom-portal-card:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 8px 25px rgba(74, 60, 49, 0.2);
+}
+
+.wisdom-entry-card {
+  background-color: rgba(255, 255, 255, 0.9);
+  border-radius: 12px;
+  box-shadow: 0 3px 10px rgba(0, 0, 0, 0.08);
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+  height: 100%;
+  border: 1px solid var(--ancient-gold);
+  overflow: hidden;
+}
+
+.wisdom-entry-card:hover {
+  transform: translateY(-3px);
+  box-shadow: 0 6px 20px rgba(74, 60, 49, 0.15);
+}
+
+.wisdom-detail-card {
+  background-color: rgba(255, 255, 255, 0.9);
+  border-radius: 15px;
+  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+  padding: 2rem;
+  margin-bottom: 2rem;
+  border: 1px solid var(--ancient-gold);
+}
+
+.sanskrit-verse {
+  font-family: 'Noto Sans Devanagari', sans-serif;
+  font-size: 1.2rem;
+  line-height: 1.8;
+  color: var(--ancient-brown);
+  padding: 1.5rem;
+  background-color: rgba(244, 228, 188, 0.5);
+  border-radius: 8px;
+  margin: 1rem 0;
+  border: 1px solid rgba(198, 169, 97, 0.3);
+}
+
+.card-footer {
+  background-color: transparent;
+  border-top: 1px solid var(--ancient-gold);
+  padding-top: 1rem;
+  margin-top: 1rem;
+}
+
+.read-more {
+  color: var(--ancient-brown);
+  font-weight: 500;
+  display: inline-flex;
+  align-items: center;
+  gap: 0.5rem;
+}
+
+.wisdom-detail-card h3 {
+  color: var(--ancient-brown);
+  font-size: 1.5rem;
+  margin-top: 1.5rem;
+  margin-bottom: 1rem;
+  border-bottom: 2px solid var(--ancient-gold);
+  padding-bottom: 0.5rem;
+}
+
+/* Additional Styles */
+
+/* Backwards-compatible background element selectors used in layout.ejs */
+.parchment-texture {
+  /* same as .manuscript-bg: full-viewport parchment */
+  position: fixed;
+  inset: 0;
+  background-image: url('/assets/images/parchment-texture.jpg');
+  background-repeat: no-repeat;
+  background-position: center center;
+  background-size: cover;
+  background-attachment: fixed;
+  opacity: 0.18;
+  /* place the parchment at the very back */
+  z-index: -3;
+  pointer-events: none;
+}
+
+.overlay-texture {
+  /* same as .decorative-overlay: subtle mandala pattern */
+  position: fixed;
+  inset: 0;
+  background-image: url('/assets/images/mandala-pattern.png');
+  background-size: 800px;
+  opacity: 0.03;
+  z-index: -2;
+  pointer-events: none;
+  animation: rotate 240s infinite linear;
+}
+
+.manuscript-decorations {
+  /* small decorative elements placed above the diagram but below main content */
+  position: fixed;
+  inset: 0;
+  pointer-events: none;
+  z-index: 0;
+}
+
+/* Auth form styling to match ancient theme */
+.auth-card {
+  background: rgba(255, 255, 255, 0.95);
+  border: 2px solid var(--ancient-gold);
+  box-shadow: 0 8px 30px rgba(0,0,0,0.15);
+  border-radius: 15px;
+  position: relative;
+  overflow: hidden;
+}
+
+.auth-card::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  height: 4px;
+  background: linear-gradient(90deg, var(--ancient-gold), var(--ancient-brown));
+}
+
+.text-parchment {
+  color: var(--parchment);
+}
+
+.auth-card .card-body {
+  padding: 2.5rem;
+  position: relative;
+}
+
+.auth-card h2 {
+  font-family: 'Rozha One', serif;
+  color: var(--ancient-brown);
+  margin-bottom: 1.5rem;
+  text-align: center;
+  position: relative;
+}
+
+.auth-card h2::after {
+  content: '';
+  display: block;
+  width: 100px;
+  height: 3px;
+  background: linear-gradient(90deg, var(--ancient-gold), transparent);
+  margin: 0.5rem auto 0;
+}
+
+.auth-card .form-control {
+  border: 1px solid rgba(74,60,49,0.2);
+  background: rgba(255,255,255,0.9);
+  color: var(--ancient-brown);
+  border-radius: 8px;
+  padding: 0.8rem 1rem;
+  transition: all 0.3s ease;
+}
+
+.auth-card .form-control:focus {
+  box-shadow: 0 0 0 3px rgba(198,169,97,0.15);
+  border-color: var(--ancient-gold);
+  background: white;
+}
+
+.auth-card .form-label {
+  color: var(--ancient-brown);
+  font-weight: 500;
+  margin-bottom: 0.5rem;
+}
+
+.auth-card .btn-ancient {
+  padding: 0.8rem 2rem;
+  width: 100%;
+  margin-top: 1rem;
+  font-weight: 600;
+  letter-spacing: 0.5px;
+}
+
+.auth-card a {
+  color: var(--ancient-brown);
+  text-decoration: none;
+  border-bottom: 1px dashed var(--ancient-gold);
+  transition: all 0.3s ease;
+}
+
+.auth-card a:hover {
+  color: var(--ancient-gold);
+  border-bottom-style: solid;
+}
+
+.auth-card .decorative-icon {
+  text-align: center;
+  margin-bottom: 1.5rem;
+  color: var(--ancient-gold);
+  font-size: 2.5rem;
+}
+
+.auth-card .auth-divider {
+  text-align: center;
+  margin: 1.5rem 0;
+  position: relative;
+}
+
+.auth-card .auth-divider::before,
+.auth-card .auth-divider::after {
+  content: '';
+  position: absolute;
+  top: 50%;
+  width: 45%;
+  height: 1px;
+  background: rgba(74,60,49,0.2);
+}
+
+.auth-card .auth-divider::before { left: 0; }
+.auth-card .auth-divider::after { right: 0; }
+
+/* make login/signup container slightly narrower on large screens */
+@media (min-width: 992px) {
+  .auth-card { max-width: 540px; margin: 0 auto; }
+}

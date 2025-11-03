@@ -1,0 +1,25 @@
+<% layout('layout') -%>
+
+<div class="card">
+  <div class="card-body">
+    <h3>AI Health & Wellness Guide</h3>
+    
+    <div class="shloka-block text-center mb-4">
+        <p class="sanskrit-text">चक्षुरध्ययनम्, वचनं श्रवणम्, सवमेककृतम्<br>
+        संग्रहकस्य यन्त्र, वतमानस्य गत, आधारस्य शल्प</p>
+        <p class="meaning text-muted">Studying what is seen, hearing what is said, making all into one.<br>
+        A machine that collects, from present and past, architect of the foundation.</p>
+    </div>
+
+    <div id="chatBox" style="height:300px; overflow:auto; border:1px solid #ddd; padding:10px; margin-bottom:10px; background:rgba(255,255,255,0.7);"></div>
+
+    <form id="chatForm">
+      <div class="input-group">
+        <input id="messageInput" type="text" class="form-control" placeholder="Describe your issue...">
+        <button class="btn btn-primary" type="submit">Send</button>
+      </div>
+    </form>
+  </div>
+</div>
+
+<script src="/js/chat.js"></script>

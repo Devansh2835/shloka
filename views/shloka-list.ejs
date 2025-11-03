@@ -1,0 +1,29 @@
+<div class="container page-transition">
+  <div class="text-center mb-5">
+    <h1>Shlokas Encyclopedia</h1>
+    <p class="lead text-ancient-brown">Discover the timeless wisdom of ancient verses</p>
+  </div>
+
+  <div class="row g-4">
+    <% shlokaList.forEach(shloka => { %>
+      <div class="col-md-6 col-lg-4">
+        <a href="/ancient/shlokas/<%= shloka.id %>" class="text-decoration-none">
+          <div class="wisdom-entry-card">
+            <div class="card-body">
+              <h3 class="card-title"><%= shloka.title %></h3>
+              <div class="sanskrit-verse mb-2"><%= shloka.verse %></div>
+              <p class="card-text"><%= shloka.meaning.substring(0, 120) %>...</p>
+              <div class="card-footer">
+                <span class="read-more">Read More <i class="fas fa-arrow-right ms-1"></i></span>
+              </div>
+            </div>
+          </div>
+        </a>
+      </div>
+    <% }); %>
+  </div>
+
+  <div class="text-center mt-5">
+    <a href="/ancient" class="btn btn-ancient"><i class="fas fa-arrow-left me-2"></i>Back to Wisdom Portal</a>
+  </div>
+</div>

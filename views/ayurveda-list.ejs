@@ -1,0 +1,31 @@
+<div class="container page-transition">
+  <div class="text-center mb-5">
+    <h1>Ayurvedic Encyclopedia</h1>
+    <p class="lead text-ancient-brown">Explore the healing wisdom of traditional Ayurvedic remedies</p>
+  </div>
+
+  <div class="row g-4">
+    <% ayurvedaList.forEach(remedy => { %>
+      <div class="col-md-6 col-lg-4">
+        <a href="/ancient/ayurveda/<%= remedy.name.toLowerCase().replace(/\s+/g, '-') %>" class="text-decoration-none">
+          <div class="wisdom-entry-card">
+            <div class="card-body">
+              <h3 class="card-title"><%= remedy.name %></h3>
+              <% if (remedy.sanskrit_name) { %>
+                <div class="sanskrit-name mb-2"><%= remedy.sanskrit_name %></div>
+              <% } %>
+              <p class="card-text"><%= remedy.overview.substring(0, 120) %>...</p>
+              <div class="card-footer">
+                <span class="read-more">Learn More <i class="fas fa-arrow-right ms-1"></i></span>
+              </div>
+            </div>
+          </div>
+        </a>
+      </div>
+    <% }); %>
+  </div>
+
+  <div class="text-center mt-5">
+    <a href="/ancient" class="btn btn-ancient"><i class="fas fa-arrow-left me-2"></i>Back to Wisdom Portal</a>
+  </div>
+</div>
